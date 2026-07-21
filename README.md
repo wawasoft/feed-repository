@@ -5,6 +5,18 @@ catalog. It is not an application backend: FeedMine reads, searches, filters,
 and fetches sources from its own local catalog, and continues to work when this
 repository or the network is unavailable.
 
+## Open source and stewardship
+
+FeedMine is an open-source application maintained by
+[Wawasoft](https://wawasoft.net). This repository publishes the public catalog
+metadata and OPML menu tree used for optional in-app updates. Its scripts and
+documentation are released under the [MIT License](LICENSE).
+
+The feeds listed here point to independent publishers. Their articles, audio,
+video, brands, and other content remain subject to the respective publishers'
+rights and terms; publishing a feed URL here does not transfer or license that
+content.
+
 ## Layout
 
 - `manifest.json` is the signed-off snapshot inventory and monotonic revision.
@@ -42,3 +54,9 @@ Before pushing, run:
 python3 scripts/validate_manifest.py
 ```
 
+## Contributing
+
+Open an issue or pull request to propose an addition, correction, removal, or
+reclassification. Please include the canonical feed URL, a brief description,
+language, and the reason for the change. Do not submit copyrighted publisher
+content or credentials.
