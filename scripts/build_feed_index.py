@@ -31,6 +31,7 @@ _ATTR_MAP: dict[str, str] = {
     "htmlUrl": "htmlUrl",
     "language": "language",
     "category": "category",
+    "type": "type",
     "feedmineSourceId": "feedmineSourceId",
     "feedmineTopic": "feedmineTopic",
     "feedmineSubcategory": "feedmineSubcategory",
