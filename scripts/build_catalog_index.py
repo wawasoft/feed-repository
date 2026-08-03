@@ -126,9 +126,11 @@ def main() -> None:
         indices = country_feeds[cname]
         countries_list.append({"k": cname, "c": len(indices), "docs": indices})
 
-    # Stats
+    # Stats — use manifest sourceCount for unique sources (avoids double-counting
+    # global feeds that appear in multiple country OPMLs).
     stats = {
-        "sources": doc_index,
+        "sources": manifest_data.get("sourceCount", doc_index),
+        "placements": doc_index,
         "countries": len(countries_list),
         "topics": len(tree_list),
     }
@@ -153,8 +155,9 @@ def main() -> None:
 
     file_size_mb = output_path.stat().st_size / (1024 * 1024)
     print(
-        f"Catalog index: {doc_index:,} feeds, {len(tree_list)} topics, "
-        f"{len(countries_list)} countries → {output_path} ({file_size_mb:.1f} MB)"
+        f"Catalog index: {stats['sources']:,} unique sources, {doc_index:,} placements, "
+        f"{len(tree_list)} topics, {len(countries_list)} countries "
+        f"→ {output_path} ({file_size_mb:.1f} MB)"
     )
 
 
